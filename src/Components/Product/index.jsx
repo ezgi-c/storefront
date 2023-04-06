@@ -1,16 +1,18 @@
+import "./product.css";
+
 const Product = ({ product }) => (
     <article className="product">
       <header>
-        <h2>{product.name}</h2>
+        <figure>
+          <img src={product.image} height="200px" width="100%" alt={product.name} />
+        </figure>
       </header>
       <main>
-        <figure>
-          <img src={product.image} width="200px" alt={product.name} />
-        </figure>
+        <h3>{product.name}</h3>
+        <br></br>
         <p>Category: {product.category}</p>
         <p>Price: ${product.price}</p>
         <p>In stock: {product.inStock}</p>
-
       </main>
     </article>
   );
