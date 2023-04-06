@@ -1,12 +1,20 @@
 const Categories = () => {
-    return (
-        <select>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="100">💯</option>
-      </select> 
-    ) 
-}
+  return (
+    <section     style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        gap: "10px"
+      }}>
+      <h3>Browse our Categories</h3>
+      <select>
+        <option value="electronics">Electornics</option>
+        <option value="food">Food</option>
+        <option value="clothing">Clothing</option>
+      </select>
+    </section>
+  );
+};
 
 export default Categories;
