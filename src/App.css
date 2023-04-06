@@ -23,12 +23,14 @@
   font-size: calc(10px + 2vmin);
   color: white;
   padding: 20px;
+  box-shadow: 0 2px 3px gray;
 }
 
 .App-link {
   color: #61dafb;
   font-size: calc(10px + 1vmin);
   padding-right: 20px;
+  cursor: pointer;
 }
 
 .footer {

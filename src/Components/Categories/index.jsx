@@ -1,8 +1,19 @@
 import { useDispatch } from "react-redux";
 import productSlice from "../../store/product";
+import { Typography, FormControl, Select, MenuItem } from "@mui/material";
 
 const Categories = () => {
   const dispatch = useDispatch();
+
+  const handleCategoryChange = (e) => {
+    const category = e.target.value;
+    dispatch(
+      productSlice.actions.setActiveCategory(
+        category === "" ? undefined : category
+      )
+    );
+  };
+
   return (
     <section
       style={{
@@ -13,22 +24,15 @@ const Categories = () => {
         gap: "10px",
       }}
     >
-      <h3>Browse our Categories</h3>
-      <select
-        onChange={(e) => {
-          const category = e.target.value;
-          dispatch(
-            productSlice.actions.setActiveCategory(
-              category === "" ? undefined : category
-            )
-          );
-        }}
-      >
-        <option value="">All</option>
-        <option value="electronics">Electornics</option>
-        <option value="food">Food</option>
-        <option value="clothing">Clothing</option>
-      </select>
+      <Typography variant="h6">Browse our Categories</Typography>
+      <FormControl>
+        <Select defaultValue="" onChange={handleCategoryChange} displayEmpty>
+          <MenuItem value="">All</MenuItem>
+          <MenuItem value="electronics">Electronics</MenuItem>
+          <MenuItem value="food">Food</MenuItem>
+          <MenuItem value="clothing">Clothing</MenuItem>
+        </Select>
+      </FormControl>
     </section>
   );
 };

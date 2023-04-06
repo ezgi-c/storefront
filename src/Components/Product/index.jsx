@@ -1,25 +1,32 @@
-import "./product.css";
+import {
+  Card,
+  CardHeader,
+  CardMedia,
+  CardContent,
+  Typography,
+} from "@mui/material";
 
 const Product = ({ product }) => (
-  <article className="product">
-    <header>
-      <figure>
-        <img
-          src={product.image}
-          height="200px"
-          width="100%"
-          alt={product.name}
-        />
-      </figure>
-    </header>
-    <main>
-      <h3>{product.name}</h3>
-      <br></br>
-      <p>Category: {product.category}</p>
-      <p>Price: ${product.price}</p>
-      <p>In stock: {product.inStock}</p>
-    </main>
-  </article>
+  <Card>
+    <CardHeader
+      title={product.name}
+      subheader={`Category: ${product.category}`}
+    />
+    <CardMedia
+      component="img"
+      height="200"
+      image={product.image}
+      alt={product.name}
+    />
+    <CardContent>
+      <Typography variant="body1" color="text.secondary">
+        Price: ${product.price}
+      </Typography>
+      <Typography variant="body1" color="text.secondary">
+        In stock: {product.inStock}
+      </Typography>
+    </CardContent>
+  </Card>
 );
 
 export default Product;

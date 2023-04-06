@@ -1,13 +1,16 @@
-section {
+/* section {
   display: grid;
   --columns: 1;
   grid-template-columns: repeat(var(--columns), 1fr);
   grid-gap: 8px 4px;
   justify-items: center;
-  padding: 30px;
+} */
+
+.products {
+  padding: 40px;
 }
 
-@media (min-width: 425px) {
+/* @media (min-width: 425px) {
   section {
     --columns: 2;
   }
@@ -29,4 +32,4 @@ section {
   section {
     --columns: 5;
   }
-}
+} */
