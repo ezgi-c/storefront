@@ -1,14 +1,14 @@
 # Lab: Class 36 - Application State with Redux
 
-__Virtual Store Phase 1:__ For this assignment, you will be starting the process of creating an e-Commerce storefront using React with Redux, coupled with your live API server.
+**Virtual Store Phase 1:** For this assignment, you will be starting the process of creating an e-Commerce storefront using React with Redux, coupled with your live API server.
 
 ## Before you begin
 
-Create a UML diagram of the __Virtual Store__ architecture on a whiteboard before you start.
+Create a UML diagram of the **Virtual Store** architecture on a whiteboard before you start.
 
 ## Phase 1 Requirements
 
-In this first phase, our goal is to setup the basic scaffolding of the application with initial styling and basic behaviors.  
+In this first phase, our goal is to setup the basic scaffolding of the application with initial styling and basic behaviors.
 
 This initial build sets up the file structure and state management so that we can progressively build this application in a scalable manner.
 
@@ -37,10 +37,10 @@ Create the Virtual Store application as follows:
   - A `<Header />` component which shows the name of your virtual store.
   - A `<Footer />` component which shows your copyright and contact information.
   - A `<Categories />` component:
-Shows a list of all categories.
-Dispatches an action when one is clicked to “activate” it.
+    Shows a list of all categories.
+    Dispatches an action when one is clicked to “activate” it.
   - A `<Products />` component:
-Displays a list of products associated with the selected category.
+    Displays a list of products associated with the selected category.
 
 ### Notes on constructing the Redux Store:
 

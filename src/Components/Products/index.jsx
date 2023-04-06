@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 
 const Products = () => {
   // const products = useSelector((state) => state.product.products);
-    const products = useSelector(filteredProducts);
+  const products = useSelector(filteredProducts);
 
   return (
     <section>
