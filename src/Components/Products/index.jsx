@@ -1,6 +1,6 @@
 import { Grid } from "@mui/material";
 import Product from "../Product";
-import { filteredProducts } from "../../store/product";
+import { filteredProducts } from "../../store/productSlice";
 import { useSelector } from "react-redux";
 import "./products.css";
 

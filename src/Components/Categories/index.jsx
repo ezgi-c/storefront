@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import productSlice from "../../store/product";
+import productSlice from "../../store/productSlice";
 import { Typography, FormControl, Select, MenuItem } from "@mui/material";
 
 const Categories = () => {
