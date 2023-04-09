@@ -9,12 +9,14 @@ import {
 
 import { useDispatch } from "react-redux";
 import cartSlice from "../../store/cartSlice";
+import productSlice from "../../store/productSlice";
 
 const Product = ({ product }) => {
   const dispatch = useDispatch();
 
   const handleAddToCart = (product) => {
     dispatch(cartSlice.actions.setCartItems(product));
+    dispatch(productSlice.actions.updateProduct(product));
   };
 
   return (

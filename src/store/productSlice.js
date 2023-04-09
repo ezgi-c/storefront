@@ -12,6 +12,17 @@ const productSlice = createSlice({
     setActiveCategory: (state, action) => {
       state.activeCategory = action.payload;
     },
+    updateProduct: (state, action) => {
+      let productToBeUpdated = action.payload.product;
+      const updatedProduct = {
+        ...productToBeUpdated,
+        inStock: productToBeUpdated.inStock - 1,
+      };
+      const index = state.products.findIndex(
+        (product) => product.id === updatedProduct.id
+      );
+      state.products[index] = updatedProduct;
+    },
   },
 });
 

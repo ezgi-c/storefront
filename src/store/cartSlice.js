@@ -11,9 +11,9 @@ const cartSlice = createSlice({
     },
 
     removeCartItem: (state, action) => {
-      state.cartItems = state.cartItems.filter(
-        (item) => item.product.id !== action.payload
-      );
+      const index = state.cartItems.indexOf(action.payload);
+      state.cartItems.splice(index, 1);
+      // borrowed the solution to splice at index from Stacy ^.^
       console.log(state.cartItems);
     },
   },

@@ -12,8 +12,8 @@ const Cart = () => {
 
   const dispatch = useDispatch();
 
-  const handleRemoveItem = (itemId) => {
-    dispatch(cartSlice.actions.removeCartItem(itemId));
+  const handleRemoveItem = (item) => {
+    dispatch(cartSlice.actions.removeCartItem(item));
   };
 
   return (
@@ -34,7 +34,7 @@ const Cart = () => {
           {cartItems.map((item) => (
             <ListItem key={item.product.id}>
               <ListItemText primary={item.product.name} />
-              <IconButton onClick={() => handleRemoveItem(item.product.id)}>
+              <IconButton onClick={() => handleRemoveItem(item)}>
                 <DeleteIcon />
               </IconButton>
             </ListItem>

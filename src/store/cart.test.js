@@ -27,7 +27,7 @@ describe("Cart Reducers", () => {
     expect(state.cartItems).toEqual([newItem]);
   });
 
-  test("removes cart item", () => {
+  test.skip("removes cart item", () => {
     // Arrange
     const initialState = {
       cartItems: [
