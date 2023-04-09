@@ -67,7 +67,7 @@ the high level development tasks that address the above end user requirements an
 ✅ Add a “Remove from Cart” button to each item in the cart.
 
 - ✅ Change the indicator in the menu.
-- ❌ Add 1 back to the # in stock for that product.
+- ✅ Add 1 back to the # in stock for that product.
 
 ### Testing
 

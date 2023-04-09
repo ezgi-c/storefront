@@ -15,8 +15,10 @@ const Product = ({ product }) => {
   const dispatch = useDispatch();
 
   const handleAddToCart = (product) => {
-    dispatch(cartSlice.actions.setCartItems(product));
-    dispatch(productSlice.actions.decreaseStock(product));
+    product.product.inStock > 0 &&
+      dispatch(cartSlice.actions.setCartItems(product));
+    product.product.inStock > 0 &&
+      dispatch(productSlice.actions.decreaseStock(product));
   };
 
   return (
