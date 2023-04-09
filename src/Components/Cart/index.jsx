@@ -32,7 +32,7 @@ const Cart = () => {
           padding: "1rem",
         }}
       >
-        <List sx={{ maxHeight: "300px", overflowY: "scroll" }} >
+        <List sx={{ maxHeight: "300px", overflowY: "scroll" }}>
           {cartItems.map((item) => (
             <ListItem key={item.product.id}>
               <ListItemText primary={item.product.name} />
