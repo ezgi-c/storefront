@@ -6,12 +6,33 @@ const productSlice = createSlice({
   name: "product",
   initialState: {
     products: data.products,
-    categories: data.categories,
     activeCategory: undefined,
   },
   reducers: {
     setActiveCategory: (state, action) => {
       state.activeCategory = action.payload;
+    },
+    decreaseStock: (state, action) => {
+      let productToBeUpdated = action.payload.product;
+      const updatedProduct = {
+        ...productToBeUpdated,
+        inStock: productToBeUpdated.inStock - 1,
+      };
+      const index = state.products.findIndex(
+        (product) => product.id === updatedProduct.id
+      );
+      state.products[index] = updatedProduct;
+    },
+    increaseStock: (state, action) => {
+      let productToBeUpdated = action.payload.product;
+      const updatedProduct = {
+        ...productToBeUpdated,
+        inStock: productToBeUpdated.inStock,
+      };
+      const index = state.products.findIndex(
+        (product) => product.id === updatedProduct.id
+      );
+      state.products[index] = updatedProduct;
     },
   },
 });
