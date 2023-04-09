@@ -11,49 +11,56 @@
       "category": "electronics",
       "price": 699.0,
       "inStock": 5,
-      "image": "https://emfservices.azureedge.net/news/39091.jpg"
+      "image": "https://emfservices.azureedge.net/news/39091.jpg",
+      "id": 1
     },
     {
       "name": "Radio",
       "category": "electronics",
       "price": 99.0,
       "inStock": 15,
-      "image": "https://live.staticflickr.com/6207/6138240034_a4ea109e99_b.jpg"
+      "image": "https://live.staticflickr.com/6207/6138240034_a4ea109e99_b.jpg",
+      "id": 2
     },
     {
       "name": "Shirt",
       "category": "clothing",
       "price": 9.0,
       "inStock": 25,
-      "image": "https://i.ebayimg.com/images/g/FKIAAOSw~Ghj6eQb/s-l500.jpg"
+      "image": "https://i.ebayimg.com/images/g/FKIAAOSw~Ghj6eQb/s-l500.jpg",
+      "id": 3
     },
     {
       "name": "Socks",
       "category": "clothing",
       "price": 12.0,
       "inStock": 10,
-      "image": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Sandals_Worn_wth_White_Ankle_Socks.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Sandals_Worn_wth_White_Ankle_Socks.jpg",
+      "id": 4
     },
     {
       "name": "Apples",
       "category": "food",
       "price": 0.99,
       "inStock": 500,
-      "image": "https://c.pxhere.com/images/50/0f/7e5722469e6a4b5a9df2c14be927-1433363.jpg!d"
+      "image": "https://c.pxhere.com/images/50/0f/7e5722469e6a4b5a9df2c14be927-1433363.jpg!d",
+      "id": 5
     },
     {
       "name": "Eggs",
       "category": "food",
       "price": 1.99,
       "inStock": 12,
-      "image": "https://ncatregister.com/wp-content/uploads/2023/02/Egg-Inflation-Featured-Image.jpg"
+      "image": "https://ncatregister.com/wp-content/uploads/2023/02/Egg-Inflation-Featured-Image.jpg",
+      "id": 6
     },
     {
       "name": "Bread",
       "category": "food",
       "price": 2.39,
       "inStock": 90,
-      "image": "https://www.publicdomainpictures.net/pictures/10000/velka/87-1273073877xEjA.jpg"
+      "image": "https://www.publicdomainpictures.net/pictures/10000/velka/87-1273073877xEjA.jpg",
+      "id": 7
     }
   ]
 }

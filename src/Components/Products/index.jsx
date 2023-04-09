@@ -10,7 +10,7 @@ const Products = () => {
   return (
     <Grid className="products" container spacing={4}>
       {products.map((product) => (
-        <Grid item xs={12} sm={6} md={3} key={product.id}>
+        <Grid item xs={12} sm={6} md={3} key={product.name}>
           <Product product={product} />
         </Grid>
       ))}
