@@ -39,13 +39,13 @@ the high level development tasks that address the above end user requirements an
   - ✅ When a user clicks the “add to cart” button, add the item to their cart:
     - ✅ In the `<SimpleCart />` component, show a running list of the items in the cart (just the titles).
     - ✅ Change the `(0)` indicator in the header to show the actual number of items in the cart.
-    - ❌ Reduce the number in stock for that product.
+    - ✅ Reduce the number in stock for that product.
 
 ### Manage state in a Redux store with multiple reducers/actions
 
-- Categories(TODO: separate from `productSlice`)
+- Categories
   - ✅ State should be a list of categories as well as the active one.
-    - ❓ Each category should have a normalized name, display name, and a description.
+    - ✅ Each category should have a normalized name, display name, and a description.
   - ✅ Create an action that will trigger the reducer to change the active category.
   - ✅ Update the active category in the reducer when this action is dispatched.
 - Products
@@ -54,8 +54,8 @@ the high level development tasks that address the above end user requirements an
   - ✅ Create an action that will trigger the reducer to filter the product list when the active category is changed.
     - Hint: Different reducers can respond to the same actions.
   - ✅ Create a reducer that will filter the products list based on the active category.
-  - ❌ Create an action that will trigger the reducer to reduce the stock counter.
-  - ❌ Create a reducer that reduces the # in stock when that action is dispatched.
+  - ✅ Create an action that will trigger the reducer to reduce the stock counter.
+  - ✅ Create a reducer that reduces the # in stock when that action is dispatched.
 - Cart
   - ✅ State should be an array of products that have been added (all product details).
   - ✅ Create an action that will trigger the reducer to add the selected item to the cart.
@@ -66,7 +66,7 @@ the high level development tasks that address the above end user requirements an
 
 ✅ Add a “Remove from Cart” button to each item in the cart.
 
-- ❓ Change the indicator in the menu.
+- ✅ Change the indicator in the menu.
 - ❌ Add 1 back to the # in stock for that product.
 
 ### Testing
