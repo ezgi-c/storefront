@@ -6,7 +6,8 @@ import { Box, List, ListItem, ListItemText, IconButton } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 
 const Cart = () => {
-  const cartItems = useSelector((state) => state.cart.cartItems);
+  const cart = useSelector((state) => state.cart);
+  const cartItems = cart.cartItems;
   console.log(cartItems);
 
   const dispatch = useDispatch();

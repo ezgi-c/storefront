@@ -20,12 +20,6 @@ const Products = () => {
 
 export default Products;
 
-// // const data = require("../../data.json");
-
-// const Products = () => {
-//   // const products = useSelector((state) => state.product.products);
-//   const products = useSelector(filteredProducts);
-
 //   return (
 //     <section>
 //       {products.map((product) => (

@@ -6,7 +6,6 @@ const productSlice = createSlice({
   name: "product",
   initialState: {
     products: data.products,
-    categories: data.categories,
     activeCategory: undefined,
   },
   reducers: {

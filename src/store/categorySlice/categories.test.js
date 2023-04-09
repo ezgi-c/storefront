@@ -1,6 +1,6 @@
-import Cart from ".";
+import categorySlice from "./index";
 
-describe("Cart component", () => {
+describe("categorySlice", () => {
   test.skip("..", () => {
     // Arrange
     // Act
