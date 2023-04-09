@@ -1,32 +1,46 @@
-// import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-// import cartSlice from "../../store/cartSlice";
+import { useDispatch } from "react-redux";
+import cartSlice from "../../store/cartSlice";
+
+import { Box, List, ListItem, ListItemText, IconButton } from "@mui/material";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 const Cart = () => {
   const cartItems = useSelector((state) => state.cart.cartItems);
   console.log(cartItems);
 
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-  // const handleRemoveItem = (e) => {
-  //   const category = e.target.value;
-  //   dispatch(
-  //     cartSlice.actions.removeItem(
-  //       category === "" ? undefined : category
-  //     )
-  //   );
-  // };
+  const handleRemoveItem = (itemId) => {
+    dispatch(cartSlice.actions.removeCartItem(itemId));
+  };
 
   return (
-    <article>
-      <ul>
-        {cartItems.map((item) => (
-          <li key={item.product.id}>
-            <p>{item.product.name}</p>
-          </li>
-        ))}
-      </ul>
-    </article>
+    cartItems.length && (
+      <Box
+        sx={{
+          position: "fixed",
+          // top: 0,
+          right: 0,
+          width: 150,
+          backgroundColor: "#61dafb",
+          border: "3px solid white",
+          borderRadius: "3px",
+          padding: "1rem",
+        }}
+      >
+        <List>
+          {cartItems.map((item) => (
+            <ListItem key={item.product.id}>
+              <ListItemText primary={item.product.name} />
+              <IconButton onClick={() => handleRemoveItem(item.product.id)}>
+                <DeleteIcon />
+              </IconButton>
+            </ListItem>
+          ))}
+        </List>
+      </Box>
+    )
   );
 };
 

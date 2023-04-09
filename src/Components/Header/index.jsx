@@ -7,7 +7,7 @@ const Header = () => {
     <header className="App-header">
       <h1>Virtual Store</h1>
       <p className="App-link">
-        🛒 CART <span>{cartItems.length}</span>
+        🛒 CART (<span>{cartItems.length}</span>)
       </p>
     </header>
   );

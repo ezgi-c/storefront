@@ -9,9 +9,9 @@ function App() {
   return (
     <>
       <Header />
+      <Cart />
       <Categories />
       <Products />
-      <Cart />
       <Footer />
     </>
   );

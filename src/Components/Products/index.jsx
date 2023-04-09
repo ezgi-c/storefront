@@ -20,11 +20,6 @@ const Products = () => {
 
 export default Products;
 
-// import "./products.css";
-// import Product from "../Product";
-// import { filteredProducts } from "../../store/product";
-// import { useSelector } from "react-redux";
-
 // // const data = require("../../data.json");
 
 // const Products = () => {
@@ -39,5 +34,3 @@ export default Products;
 //     </section>
 //   );
 // };
-
-// export default Products;
