@@ -1,6 +1,6 @@
 import { Grid } from "@mui/material";
 import Product from "../Product";
-import { filteredProducts } from "../../store/product";
+import { filteredProducts } from "../../store/productSlice";
 import { useSelector } from "react-redux";
 import "./products.css";
 
@@ -10,7 +10,7 @@ const Products = () => {
   return (
     <Grid className="products" container spacing={4}>
       {products.map((product) => (
-        <Grid item xs={12} sm={6} md={3} key={product.id}>
+        <Grid item xs={12} sm={6} md={3} key={product.name}>
           <Product product={product} />
         </Grid>
       ))}
@@ -19,11 +19,6 @@ const Products = () => {
 };
 
 export default Products;
-
-// import "./products.css";
-// import Product from "../Product";
-// import { filteredProducts } from "../../store/product";
-// import { useSelector } from "react-redux";
 
 // // const data = require("../../data.json");
 
@@ -39,5 +34,3 @@ export default Products;
 //     </section>
 //   );
 // };
-
-// export default Products;
