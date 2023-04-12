@@ -1,8 +1,11 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+
 import productSlice from "../../store/productSlice";
 import { Typography, FormControl, Select, MenuItem } from "@mui/material";
 
 const Categories = () => {
+  const categories = useSelector((state) => state.category.categories);
+
   const dispatch = useDispatch();
 
   const handleCategoryChange = (e) => {
@@ -28,9 +31,14 @@ const Categories = () => {
       <FormControl>
         <Select defaultValue="" onChange={handleCategoryChange} displayEmpty>
           <MenuItem value="">All</MenuItem>
-          <MenuItem value="electronics">Electronics</MenuItem>
+          {categories.forEach((category) => {
+            <MenuItem value={category.name}>
+              {category.name} key={category._id}
+            </MenuItem>;
+          })}
+          {/* <MenuItem value="electronics">Electronics</MenuItem>
           <MenuItem value="food">Food</MenuItem>
-          <MenuItem value="clothing">Clothing</MenuItem>
+          <MenuItem value="clothing">Clothing</MenuItem> */}
         </Select>
       </FormControl>
     </section>

@@ -1,4 +1,36 @@
-# Lab 37: Redux - Combined Reducers
+# Lab 38: Redux - Asynchronous Actions
+
+__Virtual Store Phase 3:__ 
+Connect the Virtual Store to an API to retrieve live data from your data source, using `thunk` to enable asynchronous actions.
+
+## Phase 3 Requirements
+
+In phase 3, we will be connecting our Virtual Store to a live API so that our data is persistent and able to be separately managed.
+
+For this phase, we are now adding the following new user stories to meet the new requirements.
+
+- As a user, I want to interact with live inventory so that I have confidence that the displayed products are in stock.
+- As a user, I want to know to that when I add an item to my cart, that it is removed from inventory so that no other users can purchase it.
+
+## Technical Requirements / Notes
+
+High level development tasks that address the above end user requirements and workflow.
+
+- Continue to use Material UI Components for layout and styling.
+- Load the category and product list from a remote API on page load.
+- Update the product quantity in stock when adding items to (or removing from) the cart.
+- Continue to use multiple reducers.
+
+### Notes on State Management
+
+- You will need to use `useEffect()` to dispatch a load action on the initial page load.
+  - This will need to use `thunk` as it will be asynchronous.
+- When adding/removing/updating `products` in the cart, the action/reducer will need to update the `product` on the server.
+  - Perform the appropriate `post`, `put`, or `delete` via API call (using thunk in an async action) on each of these actions as performed by the users.
+
+_NOTE: When write operations happen in the cart, the products are changed permanently (inventory count changes on the server), your product list in state will be instantly out of sync with what’s on the server. How (or when) will you re-sync the state of your application with the state of the persisted data on the server? Perhaps ensure that only products that have an available inventory of > 0 can be shown on the application as users browse the categories._
+
+<!-- # Lab 37: Redux - Combined Reducers
 
 __Virtual Store Phase 2:__ Continue work on the e-Commerce storefront, breaking up the store into __multiple reducers__ and sharing functionality/data between components.
 
@@ -71,7 +103,7 @@ the high level development tasks that address the above end user requirements an
 
 ### Testing
 
-Behavioral tests to assert all user stories are properly completed and operational.
+Behavioral tests to assert all user stories are properly completed and operational. -->
 
 <!-- # Lab: Class 36 - Application State with Redux
 
