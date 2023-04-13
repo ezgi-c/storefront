@@ -9,7 +9,8 @@ import {
 
 import { useDispatch } from "react-redux";
 import cartSlice from "../../store/cartSlice";
-import productSlice from "../../store/productSlice";
+// import productSlice from "../../store/productSlice";
+import { updateProductStock } from "../../store/productSlice";
 
 const Product = ({ product }) => {
   const dispatch = useDispatch();
@@ -17,8 +18,10 @@ const Product = ({ product }) => {
   const handleAddToCart = (product) => {
     product.product.inStock > 0 &&
       dispatch(cartSlice.actions.setCartItems(product));
+    // product.product.inStock > 0 &&
+    //   dispatch(productSlice.actions.decreaseStock(product));
     product.product.inStock > 0 &&
-      dispatch(productSlice.actions.decreaseStock(product));
+      dispatch(updateProductStock({ product: product.product, stock: -1 }));
   };
 
   return (
