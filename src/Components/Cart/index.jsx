@@ -1,7 +1,8 @@
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import cartSlice from "../../store/cartSlice";
-import productSlice from "../../store/productSlice";
+
+import { updateProductStock } from "../../store/productSlice";
 
 import { Box, List, ListItem, ListItemText, IconButton } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
@@ -15,7 +16,7 @@ const Cart = () => {
 
   const handleRemoveItem = (item) => {
     dispatch(cartSlice.actions.removeCartItem(item));
-    dispatch(productSlice.actions.increaseStock(item));
+    dispatch(updateProductStock({ product: item.product, stock: 0 }));
   };
 
   return (
@@ -34,7 +35,7 @@ const Cart = () => {
       >
         <List sx={{ maxHeight: "300px", overflowY: "scroll" }}>
           {cartItems.map((item) => (
-            <ListItem key={item.product.id}>
+            <ListItem key={item.product._id}>
               <ListItemText primary={item.product.name} />
               <IconButton onClick={() => handleRemoveItem(item)}>
                 <DeleteIcon />
