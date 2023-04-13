@@ -1,7 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-// const data = require("./data.json");
-
 export const loadCategories = createAsyncThunk("categories/load", async () => {
   const response = await fetch(process.env.REACT_APP_API + "/categories");
   const json = await response.json();
@@ -16,10 +14,9 @@ const categorySlice = createSlice({
   },
   reducers: {},
   extraReducers: (builder) => {
-    builder
-      .addCase(loadCategories.fulfilled, (state, { payload }) => {
-        state.categories = payload;
-      })
+    builder.addCase(loadCategories.fulfilled, (state, { payload }) => {
+      state.categories = payload;
+    });
   },
 });
 

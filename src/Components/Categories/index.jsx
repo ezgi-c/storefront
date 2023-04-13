@@ -34,12 +34,9 @@ const Categories = () => {
           <MenuItem value="">All</MenuItem>
           {categories.map((category) => (
             <MenuItem key={category._id} value={category.name}>
-              {category.name} 
+              {category.name}
             </MenuItem>
           ))}
-          {/* <MenuItem value="electronics">Electronics</MenuItem>
-          <MenuItem value="food">Food</MenuItem>
-          <MenuItem value="clothing">Clothing</MenuItem> */}
         </Select>
       </FormControl>
     </section>

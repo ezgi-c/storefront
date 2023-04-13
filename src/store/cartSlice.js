@@ -1,22 +1,26 @@
 import { createSlice } from "@reduxjs/toolkit";
-// import { useDispatch } from "react-redux";
 
+const savedCart = localStorage.getItem("cartItems");
+console.log(savedCart);
+
+const initialState = {
+  cartItems: savedCart ? JSON.parse(savedCart) : [],
+};
 
 const cartSlice = createSlice({
   name: "cart",
-  initialState: {
-    cartItems: [],
-  },
+  initialState,
   reducers: {
     setCartItems: (state, action) => {
       state.cartItems = [...state.cartItems, action.payload];
+      localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
     },
 
     removeCartItem: (state, action) => {
-      const index = state.cartItems.indexOf(action.payload);
-      state.cartItems.splice(index, 1);
-      // borrowed the solution to splice at index from Stacy ^.^
-      console.log(state.cartItems);
+      state.cartItems = state.cartItems.filter(
+        (item) => item.product._id !== action.payload.product._id
+      );
+      localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
     },
   },
 });

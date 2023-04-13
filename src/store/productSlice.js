@@ -14,14 +14,6 @@ export const updateProductStock = createAsyncThunk(
       ...product,
       inStock: product.inStock + stock,
     };
-    // export const updateProduct = createAsyncThunk(
-    //   "products/update",
-    //   async ({ product, stockAmount }) => {
-    //     const updatedProduct = {
-    //       ...product,
-    //       inStock: product.inStock - stockAmount,
-    //     };
-    //     // PUT to the API at products/{id}
 
     const response = await fetch(
       `${process.env.REACT_APP_API}/products/${product._id}`,
@@ -33,17 +25,8 @@ export const updateProductStock = createAsyncThunk(
         },
       }
     );
-    //     const response = await fetch(
-    //       `${process.env.REACT_APP_API}/products/${product._id}`,
-    //       {
-    //         method: "PUT",
-    //         contentType: "application/json",
-    //         body: JSON.stringify(updatedProduct),
-    //       }
-    //     );
     const json = await response.json();
     return { updatedProduct: json };
-    //     return response.json();
   }
 );
 
@@ -57,28 +40,6 @@ const productSlice = createSlice({
     setActiveCategory: (state, action) => {
       state.activeCategory = action.payload;
     },
-    // decreaseStock: (state, action) => {
-    //   let productToBeUpdated = action.payload.product;
-    //   const updatedProduct = {
-    //     ...productToBeUpdated,
-    //     inStock: productToBeUpdated.inStock - 1,
-    //   };
-    //   const index = state.products.findIndex(
-    //     (product) => product.id === updatedProduct.id
-    //   );
-    //   state.products[index] = updatedProduct;
-    // },
-    // increaseStock: (state, action) => {
-    //   let productToBeUpdated = action.payload.product;
-    //   const updatedProduct = {
-    //     ...productToBeUpdated,
-    //     inStock: productToBeUpdated.inStock,
-    //   };
-    //   const index = state.products.findIndex(
-    //     (product) => product.id === updatedProduct.id
-    //   );
-    //   state.products[index] = updatedProduct;
-    // },
   },
   extraReducers: (builder) => {
     builder
@@ -92,13 +53,6 @@ const productSlice = createSlice({
         );
         state.products[index] = updatedProduct;
       });
-    // .addCase(updateProduct.fulfilled, (state, { payload }) => {
-    //   // console.log(`updateProduct.fulfilled`, payload);
-    //   const product = state.products.find(
-    //     (product) => product._id === payload._id
-    //   );
-    //   product.inStock = payload.inStock;
-    // });
   },
 });
 
