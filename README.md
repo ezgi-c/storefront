@@ -1,4 +1,50 @@
-# Lab 38: Redux - Asynchronous Actions
+# Lab 39: Redux - Additional Topics
+
+__Virtual Store Phase 4:__
+Complete work on the Virtual Store by adding detail pages for individual products as well as the the cart checkout page.
+
+## Phase 4 Requirements
+
+In phase 4, we will be completing work on our Virtual Store by adding two full page views to the application: Product Details and Checkout.
+
+For this phase, we are now adding the following new user stories to meet the new requirements.
+
+- ✅ As a user, I want to see a full detail view of a product so that I can make a more informed choice about purchasing it.
+- ✅ As a user, I want to view my full cart and initiate the checkout process so that I can purchase my items and have them delivered.
+
+## Technical Requirements
+
+- ✅ Add routing to the application.
+- ✅ Link every product to a page that displays the full product details.
+- ✅ Link the “Cart” summary in the header to a full shopping cart page with shipping/payment forms.
+- Additionally, we will be swapping out our Redux store and replacing it with a store built using Redux Toolkit.
+
+### Application Architecture
+
+- ✅ Add `<BrowserRouter />` to your application.
+  - ✅ Create a `<Storefront />` component to contain all of the components viewable form the / route.
+- ✅ Create a new page component: `<ProductDetails />`.
+  - ✅ Alter each product on the listing screen to have a new “Product Details” button.
+  - ✅ When clicked, `<Link to...>` /products/## where ## is the product ID.
+  - On this page, show an expanded view of the product, including placeholders for additional information such as reviews, suggestions, etc.
+- ✅ Create a new page component: `<ShoppingCart />`
+  - ✅ Link to this page from the `Cart (x)` in the header, on the `/cart` route.
+  - On this page, show:
+    - ✅ A summary of items in tabular format.
+    - ✅ A final order total.
+    - ✅ A form allowing the user to enter their billing/shipping address and credit card information.
+    - ✅ On submit, simply draw an alert that says “Thank you for your purchase”
+      - We will __not__ be processing transactions or storing orders just yet.
+
+### Notes on State Management
+
+- ✅ While we will still be using Redux, the technical requirement for this phase is to refactor existing actions and reducers into the new __Redux Toolkit__ framework/pattern.
+  - Note that there is no new state functionality (the two pages are read-only), but the underlying architecture will be new.
+
+_RECOMMENDATION: complete the core features first. Once the new pages are added and properly working, then begin the work of swapping the current Redux Store for the Redux Toolkit version of the store. Do this tactically, so that you can easily switch between implementations if you need to._
+
+
+<!-- # Lab 38: Redux - Asynchronous Actions
 
 __Virtual Store Phase 3:__ 
 Connect the Virtual Store to an API to retrieve live data from your data source, using `thunk` to enable asynchronous actions.
@@ -28,7 +74,7 @@ High level development tasks that address the above end user requirements and wo
 - When adding/removing/updating `products` in the cart, the action/reducer will need to update the `product` on the server.
   - Perform the appropriate `post`, `put`, or `delete` via API call (using thunk in an async action) on each of these actions as performed by the users.
 
-_NOTE: When write operations happen in the cart, the products are changed permanently (inventory count changes on the server), your product list in state will be instantly out of sync with what’s on the server. How (or when) will you re-sync the state of your application with the state of the persisted data on the server? Perhaps ensure that only products that have an available inventory of > 0 can be shown on the application as users browse the categories._
+_NOTE: When write operations happen in the cart, the products are changed permanently (inventory count changes on the server), your product list in state will be instantly out of sync with what’s on the server. How (or when) will you re-sync the state of your application with the state of the persisted data on the server? Perhaps ensure that only products that have an available inventory of > 0 can be shown on the application as users browse the categories._ -->
 
 <!-- # Lab 37: Redux - Combined Reducers
 
