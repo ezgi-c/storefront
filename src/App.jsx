@@ -8,6 +8,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Storefront from "./Components/Storefront";
 import ProductDetails from "./Components/ProductDetails";
 import HomePage from "./Components/Home";
+import ShoppingCart from "./Components/ShoppingCart";
 
 function App() {
   const dispatch = useDispatch();
@@ -24,6 +25,7 @@ function App() {
         <Route element={<Storefront />}>
           <Route path="/" element={<HomePage />} />
           <Route path="/product/:name" element={<ProductDetails />} />
+          <Route path="/cart" element={<ShoppingCart />} />
         </Route>
       </Routes>
     </BrowserRouter>

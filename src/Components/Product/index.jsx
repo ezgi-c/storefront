@@ -44,7 +44,12 @@ const Product = ({ product }) => {
         </Typography>
       </CardContent>
       <Button onClick={() => handleAddToCart({ product })}>Add to Cart</Button>
-      <Link to={`/product/${product.name}`}>Product Details</Link>
+      <Link
+        to={`/product/${product.name}`}
+        style={{ color: "blue", textDecoration: "none", float: "right" }}
+      >
+        Product Details
+      </Link>
     </Card>
   );
 };

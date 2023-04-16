@@ -10,13 +10,13 @@ In phase 4, we will be completing work on our Virtual Store by adding two full p
 For this phase, we are now adding the following new user stories to meet the new requirements.
 
 - ✅ As a user, I want to see a full detail view of a product so that I can make a more informed choice about purchasing it.
-- As a user, I want to view my full cart and initiate the checkout process so that I can purchase my items and have them delivered.
+- ✅ As a user, I want to view my full cart and initiate the checkout process so that I can purchase my items and have them delivered.
 
 ## Technical Requirements
 
 - ✅ Add routing to the application.
 - ✅ Link every product to a page that displays the full product details.
-- Link the “Cart” summary in the header to a full shopping cart page with shipping/payment forms.
+- ✅ Link the “Cart” summary in the header to a full shopping cart page with shipping/payment forms.
 - Additionally, we will be swapping out our Redux store and replacing it with a store built using Redux Toolkit.
 
 ### Application Architecture
@@ -27,25 +27,22 @@ For this phase, we are now adding the following new user stories to meet the new
   - ✅ Alter each product on the listing screen to have a new “Product Details” button.
   - ✅ When clicked, `<Link to...>` /products/## where ## is the product ID.
   - On this page, show an expanded view of the product, including placeholders for additional information such as reviews, suggestions, etc.
-- Create a new page component: `<ShoppingCart />`
-  - Link to this page from the `Cart (x)` in the header, on the `/cart` route.
+- ✅ Create a new page component: `<ShoppingCart />`
+  - ✅ Link to this page from the `Cart (x)` in the header, on the `/cart` route.
   - On this page, show:
-    - A summary of items in tabular format.
-    - A final order total.
-    - A form allowing the user to enter their billing/shipping address and credit card information.
-    - On submit, simply draw an alert that says “Thank you for your purchase”
+    - ✅ A summary of items in tabular format.
+    - ✅ A final order total.
+    - ✅ A form allowing the user to enter their billing/shipping address and credit card information.
+    - ✅ On submit, simply draw an alert that says “Thank you for your purchase”
       - We will __not__ be processing transactions or storing orders just yet.
 
 ### Notes on State Management
 
-- While we will still be using Redux, the technical requirement for this phase is to refactor existing actions and reducers into the new __Redux Toolkit__ framework/pattern.
+- ✅ While we will still be using Redux, the technical requirement for this phase is to refactor existing actions and reducers into the new __Redux Toolkit__ framework/pattern.
   - Note that there is no new state functionality (the two pages are read-only), but the underlying architecture will be new.
 
 _RECOMMENDATION: complete the core features first. Once the new pages are added and properly working, then begin the work of swapping the current Redux Store for the Redux Toolkit version of the store. Do this tactically, so that you can easily switch between implementations if you need to._
 
-### Testing
-
-- Behavioral tests are required to assert all user stories are properly completed and operational.
 
 <!-- # Lab 38: Redux - Asynchronous Actions
 
