@@ -6,7 +6,7 @@ import configureStore from "redux-mock-store";
 
 const mockStore = configureStore([]);
 
-describe("Cart", () => {
+describe("SimpleCart", () => {
   test("renders items in cart", () => {
     const store = mockStore({
       cart: {

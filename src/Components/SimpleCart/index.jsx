@@ -7,10 +7,10 @@ import { updateProductStock } from "../../store/productSlice";
 import { Box, List, ListItem, ListItemText, IconButton } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 
-const Cart = () => {
+const SimpleCart = () => {
   const cart = useSelector((state) => state.cart);
   const cartItems = cart.cartItems;
-  console.log(cartItems);
+  // console.log(cartItems);
 
   const dispatch = useDispatch();
 
@@ -48,4 +48,4 @@ const Cart = () => {
   );
 };
 
-export default Cart;
+export default SimpleCart;

@@ -11,6 +11,8 @@ import { useDispatch } from "react-redux";
 import cartSlice from "../../store/cartSlice";
 import { updateProductStock } from "../../store/productSlice";
 
+import { Link } from "react-router-dom";
+
 const Product = ({ product }) => {
   const dispatch = useDispatch();
 
@@ -42,6 +44,7 @@ const Product = ({ product }) => {
         </Typography>
       </CardContent>
       <Button onClick={() => handleAddToCart({ product })}>Add to Cart</Button>
+      <Link to={`/product/${product.name}`}>Product Details</Link>
     </Card>
   );
 };

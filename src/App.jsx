@@ -1,13 +1,13 @@
 import "./App.css";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
-import Footer from "./Components/Footer";
-import Header from "./Components/Header";
-import Products from "./Components/Products";
-import Categories from "./Components/Categories";
-import Cart from "./Components/Cart";
 import { loadProducts } from "./store/productSlice";
 import { loadCategories } from "./store/categorySlice";
+
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Storefront from "./Components/Storefront";
+import ProductDetails from "./Components/ProductDetails";
+import HomePage from "./Components/Home";
 
 function App() {
   const dispatch = useDispatch();
@@ -18,18 +18,15 @@ function App() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // const doUpdateProduct = () => {
-  //   dispatch(updateProduct({ product: products[0], stockAmount: -2 }));
-  // };
-
   return (
-    <>
-      <Header />
-      <Cart />
-      <Categories />
-      <Products />
-      <Footer />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<Storefront />}>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/product/:name" element={<ProductDetails />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

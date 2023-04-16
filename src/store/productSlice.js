@@ -61,4 +61,7 @@ export const filteredProducts = ({ product: { activeCategory, products } }) =>
     ? products.filter((product) => product.category === activeCategory)
     : products;
 
+export const productSelector = (name) => (state) =>
+  state.product.products.find((product) => product.name === name);
+
 export default productSlice;
